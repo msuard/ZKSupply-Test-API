@@ -6,8 +6,13 @@ class Service {
 
   }
 
-  async create(params) {
+  async create(data, params) {
 
+    // console.log("\nTEMPERATURE: " + data.temperature + " degC\n");
+    console.log(data)
+    console.log(params)
+
+    return "OK";
   }
 
 }

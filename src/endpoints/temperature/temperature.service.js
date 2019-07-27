@@ -1,7 +1,7 @@
 // Initializes the `alert` service on path `/alert`
 const getRequestHeaders = require('../../utils/headers');
-const createExampleService = require('./example.class');
-const hooks = require('./example.hooks');
+const createExampleService = require('./temperature.class');
+const hooks = require('./temperature.hooks');
 
 module.exports = function (app) {
 
@@ -12,11 +12,11 @@ module.exports = function (app) {
   };
 
   // Initialize our public service with any options it requires
-  app.use('/example', getRequestHeaders, createExampleService(app, options));
+  app.use('/temperature', getRequestHeaders, createExampleService(app, options));
 
 
   // Get our initialized public service so that we can register hooks
-  const exampleService = app.service('example');
+  const exampleService = app.service('temperature');
 
   exampleService.hooks(hooks(app));
 
