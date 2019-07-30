@@ -1,3 +1,6 @@
+const ElGamal = require('../../services/crypto/elgamal');
+
+
 class Service {
 
   constructor (app, options) {
@@ -12,6 +15,15 @@ class Service {
     console.log("\nReceived encrypted temperature data point:\n --> c1 = " + data.c1 + "\n --> c2 = " + data.c2)
 
     return 200;
+  }
+
+
+  async find(params){
+
+    const {pBigInt, gBigInt, ABigInt, skBigInt} = await ElGamal.generateKeyPairAsync();
+
+    return({pBigInt, gBigInt, ABigInt, skBigInt})
+
   }
 
 }
