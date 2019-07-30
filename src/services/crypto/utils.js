@@ -34,7 +34,7 @@ exports.trimBigInt = function(bi, bits) {
         const bi = new BigInt(buf.toString('hex'), 16);
 
         // Trim the result and then ensure that the highest bit is set
-        resolve(trimBigInt(bi, bits).setBit(bits - 1));
+        resolve(exports.trimBigInt(bi, bits).setBit(bits - 1));
       } catch (e) {
         reject(e)
       }
@@ -46,9 +46,9 @@ exports.generateRandomNbitBigIntListAsync =  async function (bits, length, index
     return new Promise(async (resolve, reject) => {
       try {
         if (index < length) {
-          let randomInteger = await this.getRandomNbitBigIntAsync(bits);
+          let randomInteger = await exports.getRandomNbitBigIntAsync(bits);
           list.push(randomInteger);
-          resolve(this.generateRandomNbitBigIntListAsync(bits, length, index + 1, list));
+          resolve(exports.generateRandomNbitBigIntListAsync(bits, length, index + 1, list));
         } else {
           resolve(list);
         }
@@ -62,10 +62,10 @@ exports.generateRandomNbitBigIntListWithRandomTailLengthAsync = async function (
     return new Promise(async (resolve, reject) => {
       try {
         if (index < length) {
-          let tailLength = await this.getRandomBigIntAsync(new BigInt("0", 10), new BigInt(maxTailBitLength.toString(10), 10));
-          let randomInteger = await this.getRandomNbitBigIntAsync(bits + parseInt(tailLength.toString(10), 10));
+          let tailLength = await exports.getRandomBigIntAsync(new BigInt("0", 10), new BigInt(maxTailBitLength.toString(10), 10));
+          let randomInteger = await exports.getRandomNbitBigIntAsync(bits + parseInt(tailLength.toString(10), 10));
           list.push(randomInteger);
-          resolve(this.generateRandomNbitBigIntListWithRandomTailLengthAsync(bits, maxTailBitLength, length, index + 1, list));
+          resolve(exports.generateRandomNbitBigIntListWithRandomTailLengthAsync(bits, maxTailBitLength, length, index + 1, list));
         } else {
           resolve(list);
         }
@@ -104,14 +104,14 @@ exports.generateRandomNbitBigIntListWithRandomTailLengthAsync = async function (
    */
   exports.getBigPrimeAsync =  async function (bits) {
     // Generate a random odd number with the given length
-    let bi = (await this.getRandomNbitBigIntAsync(bits)).or(BigInt.ONE);
+    let bi = (await exports.getRandomNbitBigIntAsync(bits)).or(BigInt.ONE);
 
     while (!bi.isProbablePrime()) {
-      bi = bi.add(this.BIG_TWO);
+      bi = bi.add(exports.BIG_TWO);
     }
 
     // Trim the result and then ensure that the highest bit is set
-    return this.trimBigInt(bi, bits).setBit(bits - 1);
+    return exports.trimBigInt(bi, bits).setBit(bits - 1);
   }
 
   /**
