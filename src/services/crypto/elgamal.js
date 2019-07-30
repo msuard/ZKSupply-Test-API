@@ -47,7 +47,7 @@ exports.generateKeyPairAsync = async function(primeBits = 2048) {
           ABigInt: ABigInt.toString(10)
         }, "\n"); // PUBLIC KEY IS MADE PUBLIC
 
-        resolve({pBigInt, gBigInt, ABigInt, skBigInt});
+        resolve({pBigInt: pBigInt.toString(10), gBigInt: pBigInt.toString(10), ABigInt: ABigInt.toString(10), skBigInt: skBigInt.toString(10)});
 
       } catch (e) {
         reject(e)
