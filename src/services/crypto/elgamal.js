@@ -1,59 +1,59 @@
-const JSBN = require('jsbn');
+const JSBN =  require('jsbn');
+const BigInt = JSBN.BigInteger;
 const Utils = require('./utils');
 
-const BigInt = JSBN.BigInteger;
+exports.generateKeyPairAsync = async function (primeBits = 2048) {
+  return new Promise(async (resolve, reject) =>{
+    try{
 
+      let qBigInt;
+      let pBigInt;
 
+      do {
+        qBigInt = await Utils.getBigPrimeAsync(primeBits - 1);
+        pBigInt = qBigInt.shiftLeft(1).add(BigInt.ONE);
+      } while (!pBigInt.isProbablePrime()); // Ensure that p is a prime
 
-exports.generateKeyPairAsync = async function(primeBits = 2048) {
-    return new Promise(async (resolve, reject) => {
-      try {
-
-        let qBigInt;
-        let pBigInt;
-
-        do {
-          qBigInt = await Utils.getBigPrimeAsync(primeBits - 1);
-          pBigInt = qBigInt.shiftLeft(1).add(BigInt.ONE);
-        } while (!pBigInt.isProbablePrime()); // Ensure that p is a prime
-
-        let gBigInt;
-        do {
-          // Avoid g=2 because of Bleichenbacher's attack
-          gBigInt = await Utils.getRandomBigIntAsync(new BigInt('3'), pBigInt);
-        } while (
-          gBigInt.modPowInt(2, pBigInt).equals(BigInt.ONE) ||
-          gBigInt.modPow(qBigInt, pBigInt).equals(BigInt.ONE) ||
-          // g|p-1
-          pBigInt.subtract(BigInt.ONE).remainder(gBigInt).equals(BigInt.ZERO) ||
-          // g^(-1)|p-1 (evades Khadir's attack)
-          pBigInt.subtract(BigInt.ONE).remainder(gBigInt.modInverse(pBigInt)).equals(BigInt.ZERO)
-          );
-
-        // Generate private key
-        const skBigInt = await Utils.getRandomBigIntAsync(
-          Utils.BIG_TWO,
-          pBigInt.subtract(BigInt.ONE)
+      let gBigInt;
+      do {
+        // Avoid g=2 because of Bleichenbacher's attack
+        gBigInt = await Utils.getRandomBigIntAsync(new BigInt('3'), pBigInt);
+      } while (
+        gBigInt.modPowInt(2, pBigInt).equals(BigInt.ONE) ||
+        gBigInt.modPow(qBigInt, pBigInt).equals(BigInt.ONE) ||
+        // g|p-1
+        pBigInt.subtract(BigInt.ONE).remainder(gBigInt).equals(BigInt.ZERO) ||
+        // g^(-1)|p-1 (evades Khadir's attack)
+        pBigInt.subtract(BigInt.ONE).remainder(gBigInt.modInverse(pBigInt)).equals(BigInt.ZERO)
         );
 
-        // Generate public key
-        const ABigInt = gBigInt.modPow(skBigInt, pBigInt);
+      // Generate private key
+      const xBigInt = await Utils.getRandomBigIntAsync(
+        Utils.BIG_TWO,
+        pBigInt.subtract(BigInt.ONE)
+      );
 
-        console.log("\nPrivate Key Sk =", skBigInt.toString(10), "\n"); // PRIVATE KEY IS KEPT SECRET
+      // Generate public key
+      const ABigInt = gBigInt.modPow(xBigInt, pBigInt);
+      /*
+            console.log("\nPrivate Key Sk =", skBigInt.toString(10), "\n"); // PRIVATE KEY IS KEPT SECRET
 
-        console.log("Public Key Pk =", {
-          pBigInt: pBigInt.toString(10),
-          gBigInt: gBigInt.toString(10),
-          ABigInt: ABigInt.toString(10)
-        }, "\n"); // PUBLIC KEY IS MADE PUBLIC
+            console.log("Public Key Pk =", {
+              pBigInt: pBigInt.toString(10),
+              gBigInt: gBigInt.toString(10),
+              ABigInt: ABigInt.toString(10)
+            }, "\n"); // PUBLIC KEY IS MADE PUBLIC
+      */
+      resolve({
+        p: pBigInt.toString(10),
+        g: gBigInt.toString(10),
+        A: ABigInt.toString(10),
+        x: xBigInt.toString(10),
+      });
 
-        resolve({pBigInt: pBigInt.toString(10), gBigInt: pBigInt.toString(10), ABigInt: ABigInt.toString(10), skBigInt: skBigInt.toString(10)});
-
-      } catch (e) {
-        reject(e)
-      }
-    })
-  };
+    } catch(e){reject(e)}
+  })
+};
 
 
 
