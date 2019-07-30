@@ -32,7 +32,7 @@ exports.generateKeyPairAsync = async function(primeBits = 2048) {
 
         // Generate private key
         const skBigInt = await Utils.getRandomBigIntAsync(
-          this.Utils.BIG_TWO,
+          Utils.BIG_TWO,
           pBigInt.subtract(BigInt.ONE)
         );
 
