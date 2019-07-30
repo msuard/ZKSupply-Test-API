@@ -23,16 +23,16 @@ class Service {
     const temp = 0.001 * parseInt(plaintext, 10);
 
     console.log("\nTemperature = " + temp + " decC\n");
-    
+
     return 200;
   }
 
 
   async find(params){
 
-    const {pBigInt, gBigInt, ABigInt, skBigInt} = await ElGamal.generateKeyPairAsync();
+    const { p, g, A, x } = await ElGamal.generateKeyPairAsync();
 
-    return({pBigInt, gBigInt, ABigInt, skBigInt})
+    return({ p, g, A, x })
 
   }
 
