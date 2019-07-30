@@ -1,4 +1,4 @@
-const JSBN = rrquire('jsbn');
+const JSBN = require('jsbn');
 const Utils = require('../utils/utils');
 
 const BigInt = JSBN.BigInteger;
