@@ -1,5 +1,5 @@
-import * as JSBN from 'jsbn'
-import * as Utils from '../utils/utils'
+const JSBN = rrquire('jsbn');
+const Utils = require('../utils/utils');
 
 const BigInt = JSBN.BigInteger;
 
