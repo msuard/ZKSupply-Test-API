@@ -1,5 +1,5 @@
 const JSBN = require('jsbn');
-const Utils = require('../utils/utils');
+const Utils = require('./utils');
 
 const BigInt = JSBN.BigInteger;
 
