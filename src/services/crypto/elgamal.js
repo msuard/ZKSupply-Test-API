@@ -5,7 +5,7 @@ const BigInt = JSBN.BigInteger;
 
 
 
-export async function generateKeyPairAsync(primeBits = 2048) {
+exports.generateKeyPairAsync = async function(primeBits = 2048) {
     return new Promise(async (resolve, reject) => {
       try {
 
@@ -57,7 +57,7 @@ export async function generateKeyPairAsync(primeBits = 2048) {
 
 
 
-export async function encryptMessage(m, pBigInt, gBigInt, ABigInt) {
+exports.encryptMessage =  async function (m, pBigInt, gBigInt, ABigInt) {
     return new Promise(async (resolve, reject) => {
       try {
 
@@ -83,7 +83,7 @@ export async function encryptMessage(m, pBigInt, gBigInt, ABigInt) {
     })
   };
 
-export function decryptMessage(c1, c2, sk, p){
+exports.decryptMessage = function (c1, c2, sk, p){
 
     const c1BigInt = new BigInt(c1);
     const c2BigInt = new BigInt(c2);
@@ -93,10 +93,10 @@ export function decryptMessage(c1, c2, sk, p){
     let plaintext = c1BigInt.modPow(skBigInt, pBigInt).modInverse(pBigInt).multiply(c2BigInt).remainder(pBigInt);
 
     return(plaintext.toString(10));
-}
+};
 
 
-export function aggregateData(orientationDataSet){
+exports.aggregateData = function (orientationDataSet){
 
   let C1 = new BigInt(1);
   let C2 = new BigInt(1);
@@ -112,9 +112,9 @@ export function aggregateData(orientationDataSet){
     c1: C1.toString(10),
     c2: C2.toString(10)
   })
-}
+};
 
-export function generateValidPlaintextsList(dataPointsCount){
+exports.generateValidPlaintextsList = function (dataPointsCount){
 
   const validDataPoints = [2, 3];
 
@@ -141,7 +141,7 @@ export function generateValidPlaintextsList(dataPointsCount){
 
   return validPlaintextsList[validPlaintextsList.length -1]
 
-}
+};
 
 
 
