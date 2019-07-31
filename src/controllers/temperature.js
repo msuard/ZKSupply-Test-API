@@ -13,7 +13,7 @@ exports.saveTemperatureDataPoint = async function(data){
       c2: data.c2,
     };
 
-    await Temperature.collection.insertOne(temperatureDataPoint);
+    return await Temperature.collection.insertOne(temperatureDataPoint);
 
   } catch(e){
     throw(e)

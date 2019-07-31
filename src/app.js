@@ -13,7 +13,7 @@ const appHooks = require('./app.hooks');
 const channels = require('./channels');
 
 // connections
-// const mongo = require('./connections/mongo');
+const mongo = require('./connections/mongo');
 
 const app = express(feathers());
 
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 // Set up Plugins and providers
 app.configure(express.rest());
 app.configure(socketio());
-// app.configure(mongo());
+app.configure(mongo());
 
 // Set up our services (see `services/index.js`)
 app.configure(services);

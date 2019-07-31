@@ -21,17 +21,15 @@ class Service {
 
       // console.log("\nDecrypting...\n");
 
-      const plaintext = ElGamal.decryptMessage(data.c1, data.c2, sk, p);
+      // const plaintext = ElGamal.decryptMessage(data.c1, data.c2, sk, p);
 
-      const temp = 0.001 * parseInt(plaintext, 10);
+      // const temp = 0.001 * parseInt(plaintext, 10);
 
-      console.log("\nTemperature = " + temp + " decC\n");
+      // console.log("\nTemperature = " + temp + " decC\n");
 
-      console.log("\nStoring encrypted data in MongoDB...");
+      console.log("\nStoring encrypted data in MongoDB.");
 
       await TemperatureController.saveTemperatureDataPoint(data);
-
-      console.log("Done\n");
 
       return 200;
 
