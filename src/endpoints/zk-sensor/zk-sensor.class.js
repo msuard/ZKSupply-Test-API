@@ -40,9 +40,7 @@ class Service {
 
   async find(params){
 
-    const { p, g, A, x } = await ElGamal.generateKeyPairAsync();
-
-    return({ p, g, A, x })
+    return await TemperatureController.getDataset(params.sensor_id, params.dataset_id);
 
   }
 

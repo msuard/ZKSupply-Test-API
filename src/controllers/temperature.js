@@ -21,15 +21,12 @@ exports.saveTemperatureDataPoint = async function(data){
 
 };
 
-
-
-/*
-exports.getGroup = async function(groupId){
-  const groups = await Groups.find({ "groupId": groupId });
-  if(groups[0].type === "public") {
-    return groups[0];
-  }
+exports.getDataset = async function(sensor_id,dataset_id){
+  return await Temperature.find({ "sensor_id": sensor_id, "dataset_id": dataset_id});
 };
+/*
+
+
 
 exports.getGroupKeys = async function(groupId){
   const groups = await Groups.find({ "groupId": groupId }).limit(10);
