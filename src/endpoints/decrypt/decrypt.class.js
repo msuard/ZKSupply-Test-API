@@ -24,9 +24,11 @@ class Service {
       let plaintext_data_set = [];
 
       encrypted_data_set.forEach((item) => {
+
+        let temp = ElGamal.decryptMessage(item.c1, item.c2, data.decryption_key, p)
         plaintext_data_set.push({
           timestamp: item.timestamp,
-          temperature: ElGamal.decryptMessage(item.c1, item.c2, data.decryption_key, p)
+          temperature: temp.substr(0,2) + "." + temp.substr(2,5)
         });
       });
 
