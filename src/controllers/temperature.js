@@ -21,8 +21,17 @@ exports.saveTemperatureDataPoint = async function(data){
 
 };
 
-exports.getDataset = async function(sensor_id,dataset_id){
-  return await Temperature.find({ "sensor_id": sensor_id, "dataset_id": dataset_id});
+exports.getDataset = async function(sensor_id, dataset_id){
+  const data = await Temperature.find({ "sensor_id": sensor_id, "dataset_id": dataset_id});
+
+  return {
+    timestamp: Date.now(),
+    data_type: "temperature",
+    sensor_id,
+    dataset_id,
+    data
+  };
+
 };
 /*
 

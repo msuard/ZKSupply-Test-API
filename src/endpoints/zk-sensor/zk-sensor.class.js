@@ -40,7 +40,10 @@ class Service {
 
   async find(params){
 
-    return await TemperatureController.getDataset(params.query.sensor_id, params.query.dataset_id);
+    if(params.query.data_type === "temperature"){
+      return await TemperatureController.getDataset(params.query.sensor_id, params.query.dataset_id);
+    }
+
 
   }
 
