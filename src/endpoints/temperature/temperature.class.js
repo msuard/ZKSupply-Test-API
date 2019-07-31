@@ -8,10 +8,12 @@ class Service {
 
   async create(data, params) {
 
-    // console.log("\nTEMPERATURE: " + data.temperature + " degC\n");
-    console.log("\nReceived temperature data point: T=" + data.temperature)
+      console.log("\nReceived temperature data point: T=" + data.temperature)
 
-    return 200;
+      return 200;
+
+
+
   }
 
 }
