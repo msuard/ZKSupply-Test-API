@@ -40,7 +40,7 @@ class Service {
 
   async find(params){
 
-    return await TemperatureController.getDataset(params.sensor_id, params.dataset_id);
+    return await TemperatureController.getDataset(params.query.sensor_id, params.query.dataset_id);
 
   }
 

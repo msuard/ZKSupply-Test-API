@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecbcb0cd-f578-41df-bade-feb10fcbce58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/controllers/temperature.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/temperature.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/endpoints/zk-sensor/zk-sensor.class.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/endpoints/zk-sensor/zk-sensor.class.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -270,12 +269,12 @@
       <workItem from="1556203411920" duration="784000" />
       <workItem from="1564250944629" duration="25000" />
       <workItem from="1564251081098" duration="1664000" />
-      <workItem from="1564302542309" duration="5320000" />
+      <workItem from="1564302542309" duration="5426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7793000" />
+    <option name="totallyTimeSpent" value="7899000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="957" extended-state="0" />
