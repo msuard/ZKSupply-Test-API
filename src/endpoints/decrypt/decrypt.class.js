@@ -24,6 +24,7 @@ class Service {
       let plaintext_data_set = [];
 
       encrypted_data_set.forEach((item) => {
+        console.log(item);
         plaintext_data_set.push({
           timestamp: item.timestamp,
           temperature: ElGamal.decryptMessage(item.c1, item.c2, data.decryption_key, p)
