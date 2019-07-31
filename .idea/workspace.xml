@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecbcb0cd-f578-41df-bade-feb10fcbce58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controllers/temperature.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/temperature.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/endpoints/temperature/temperature.class.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/endpoints/temperature/temperature.class.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/endpoints/zk-sensor/zk-sensor.class.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/endpoints/zk-sensor/zk-sensor.class.js" afterDir="false" />
-    </list>
+    <list default="true" id="ecbcb0cd-f578-41df-bade-feb10fcbce58" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -38,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/development.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -56,16 +50,16 @@
         <entry file="file://$PROJECT_DIR$/src/endpoints/temperature/temperature.class.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/endpoints/zk-sensor/zk-sensor.class.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="65" lean-forward="true" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
+            <state relative-caret-position="570">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -112,11 +106,11 @@
         <option value="$PROJECT_DIR$/src/endpoints/index.js" />
         <option value="$PROJECT_DIR$/src/services/crypto/utils.js" />
         <option value="$PROJECT_DIR$/src/services/crypto/elgamal.js" />
-        <option value="$PROJECT_DIR$/config/development.json" />
         <option value="$PROJECT_DIR$/src/models/temperature.js" />
         <option value="$PROJECT_DIR$/src/controllers/temperature.js" />
         <option value="$PROJECT_DIR$/src/endpoints/temperature/temperature.class.js" />
         <option value="$PROJECT_DIR$/src/endpoints/zk-sensor/zk-sensor.class.js" />
+        <option value="$PROJECT_DIR$/config/development.json" />
       </list>
     </option>
   </component>
@@ -148,12 +142,6 @@
               <item name="api" type="b2602c69:ProjectViewProjectNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api" type="b2602c69:ProjectViewProjectNode" />
@@ -199,13 +187,6 @@
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api" type="b2602c69:ProjectViewProjectNode" />
@@ -261,12 +242,12 @@
       <workItem from="1556203411920" duration="784000" />
       <workItem from="1564250944629" duration="25000" />
       <workItem from="1564251081098" duration="1664000" />
-      <workItem from="1564302542309" duration="3594000" />
+      <workItem from="1564302542309" duration="3852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6067000" />
+    <option name="totallyTimeSpent" value="6325000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="957" extended-state="0" />
@@ -398,13 +379,6 @@
     <entry file="file://$PROJECT_DIR$/src/connections/mongo.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/development.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hooks/customAuth.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -431,14 +405,21 @@
     <entry file="file://$PROJECT_DIR$/src/endpoints/temperature/temperature.class.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/endpoints/zk-sensor/zk-sensor.class.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="65" lean-forward="true" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
+        <state relative-caret-position="570">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/development.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
